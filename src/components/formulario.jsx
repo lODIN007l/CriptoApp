@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
+import useSelectMonedas from "../hooks/useSelectMonedas";
 
 const InputSubmit = styled.input`
   background-color: #9497ff;
@@ -11,11 +12,22 @@ const InputSubmit = styled.input`
   text-transform: uppercase;
   font-size: 20px;
   border-radius: 5px;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #7a7dfe;
+    cursor: pointer;
+  }
 `;
+
+const [SelectMonedas] = useSelectMonedas("Elije tu moneda");
+const [SelectCriptoMonedas] = useSelectMonedas("Elije tu Criptomoneda");
 
 const Formulario = () => {
   return (
     <form action="">
+      <SelectMonedas></SelectMonedas>
+      <SelectCriptoMonedas></SelectCriptoMonedas>
       <InputSubmit type="submit" value="Cotizar" />
     </form>
   );

@@ -40,6 +40,7 @@ const Imagen = styled.img`
 `;
 
 function App() {
+  const [monedas, setMonedas] = useState([]);
   const [count, setCount] = useState(0);
 
   return (
@@ -47,7 +48,7 @@ function App() {
       <Imagen src={ImagenCripto} alt="Imagen Criptomonedas"></Imagen>
       <div>
         <Heading> Cotiza Cripto Monedas al Instante</Heading>
-        <Formulario></Formulario>
+        <Formulario setMonedas={setMonedas}></Formulario>
       </div>
     </Contenedor>
   );
